@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto',sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    background-color: rgba(155,89,182,0.7);
+
+}
+
+/* --------------for the phone class------------*/
+
+.phone{
+    position: relative;
+    height:570px;
+    width: 340px;
+    border-radius: 15px;
+    border: 3px solid #eee;
+    overflow: hidden;
+}
+
+
+
+/*--------------- for the image which is inside phone----------- */
+.phone .content{
+    opacity: 0;
+    object-fit: cover;
+    position:absolute;
+    height: calc(100% - 60px);
+    width: 100%;
+    top:0;
+    left:0;
+    transition: opacity 0.4s ease;
+}
+
+.phone .content.show{
+    opacity: 1;
+}
+
+/* ---------------for  navigation------------- */
+
+nav{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    margin-top: -5px;
+    width:100%;
+}
+
+nav ul{
+    background-color: white;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 60px;
+}
+
+nav ul li{
+    color:#777;
+    cursor: pointer;
+    flex: 1;
+    padding:10px;
+    text-align: center;
+}
+
+nav ul li p{
+    font-size: 12px;
+    margin:2px 0;
+}
+
+nav ul li:hover , nav ul li.active{
+    color:#8e44ad;
+}

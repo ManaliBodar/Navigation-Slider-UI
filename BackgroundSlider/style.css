@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    margin:0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    transition: 0.4s ease;
+}
+
+
+/* --------for body before content----------------*/
+body::before{
+    content: '';
+    position:absolute;
+    top:0%;
+    left:0%;
+    background-color: rgba(0,0,0,0.7);
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;  /*bcz everycontent show on the image */
+}
+
+
+/*----------------for slider container--------------- */
+.slider-container{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16) , 0 3px 6px rgba(0,0,0,0.23);
+    height: 70vh;
+    width: 70vw;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ------------for slide which is in slider------------ */
+
+.slide {
+    opacity:0;
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    background-position: center center;
+    background-size: cover;
+    top:-15vh;
+    left:-15vw;
+    transition: 0.4s ease;
+    z-index: 1;
+}
+
+
+.slide.active{
+    opacity: 1;
+}
+
+/*-------------- set the arrow left and right ---------------- */
+
+.arrow{
+    background-color: transparent;
+    position:fixed;
+    z-index: 100;
+    border: 2px solid orange;
+    color: white;
+    padding:18px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.arrow:focus{
+    outline: 0;
+}
+
+.left-arrow{
+    left:calc(15vw - 65px);
+}
+
+.right-arrow{
+    right:calc(15vw  - 65px);
+}
